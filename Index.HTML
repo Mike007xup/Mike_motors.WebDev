@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIKE_MOTORS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-car"></i>
+                    <span>MIKE_MOTORS</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#cars" class="nav-link">Cars</a></li>
+                    <li><a href="#rent" class="nav-link">Rent</a></li>
+                    <li><a href="#buy" class="nav-link">Buy</a></li>
+                    <li><a href="#sell" class="nav-link">Sell</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Find Your Perfect Car</h1>
+            <p>Rent or buy premium vehicles at the best prices</p>
+            <div class="hero-buttons">
+                <a href="#cars" class="btn btn-primary">Browse Cars</a>
+                <a href="#rent" class="btn btn-secondary">Rent Now</a>
+                <a href="#buy" class="btn btn-secondary">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by make, model, or type...">
+                </div>
+                <div class="filters">
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="rent">For Rent</option>
+                        <option value="sell">For Sale</option>
+                    </select>
+                    <select id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="0-500000">0 - 500,000 FCFA</option>
+                        <option value="500000-3000000">500,000 - 3,000,000 FCFA</option>
+                        <option value="3000000-10000000">3,000,000 - 10,000,000 FCFA</option>
+                        <option value="10000000-20000000">10,000,000 - 20,000,000 FCFA</option>
+                        <option value="20000000+">20,000,000+ FCFA</option>
+                    </select>
+                    <select id="makeFilter">
+                        <option value="all">All Makes</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Honda">Honda</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Audi">Audi</option>
+                        <option value="Ford">Ford</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cars Section -->
+    <section id="cars" class="cars-section">
+        <div class="container">
+            <h2 class="section-title">Available Cars</h2>
+            <div id="carsGrid" class="cars-grid">
+                <!-- Cars will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Rent Section -->
+    <section id="rent" class="form-section">
+        <div class="container">
+            <h2 class="section-title">Rent a Car</h2>
+            <div class="form-container">
+                <form id="rentForm" class="car-form">
+                    <div class="form-group">
+                        <label for="rentCarSelect">Select Car</label>
+                        <select id="rentCarSelect" required>
+                            <option value="">Choose a car...</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rentName">Full Name</label>
+                            <input type="text" id="rentName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rentEmail">Email</label>
+                            <input type="email" id="rentEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rentPhone">Phone</label>
+                            <input type="tel" id="rentPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rentDuration">Rental Duration (days)</label>
+                            <input type="number" id="rentDuration" min="1" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="rentDate">Pickup Date</label>
+                        <input type="date" id="rentDate" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Rental Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Section -->
+    <section id="buy" class="form-section">
+        <div class="container">
+            <h2 class="section-title">Buy a Car</h2>
+            <div class="form-container">
+                <form id="buyForm" class="car-form">
+                    <div class="form-group">
+                        <label for="buyCarSelect">Select Car</label>
+                        <select id="buyCarSelect" required>
+                            <option value="">Choose a car...</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="buyName">Full Name</label>
+                            <input type="text" id="buyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyEmail">Email</label>
+                            <input type="email" id="buyEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="buyPhone">Phone</label>
+                            <input type="tel" id="buyPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyAddress">Address</label>
+                            <input type="text" id="buyAddress" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="buyMessage">Additional Message (Optional)</label>
+                        <textarea id="buyMessage" rows="3" placeholder="Any questions or special requests..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Purchase Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sell Section -->
+    <section id="sell" class="form-section">
+        <div class="container">
+            <h2 class="section-title">Sell Your Car</h2>
+            <div class="form-container">
+                <form id="sellForm" class="car-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sellMake">Make</label>
+                            <input type="text" id="sellMake" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sellModel">Model</label>
+                            <input type="text" id="sellModel" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sellYear">Year</label>
+                            <input type="number" id="sellYear" min="1900" max="2024" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sellPrice">Price (FCFA)</label>
+                            <input type="number" id="sellPrice" min="0" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sellMileage">Mileage</label>
+                            <input type="number" id="sellMileage" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sellType">Type</label>
+                            <select id="sellType" required>
+                                <option value="rent">For Rent</option>
+                                <option value="sell">For Sale</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sellImage">Image URL (Paste URL from your files)</label>
+                        <input type="url" id="sellImage" placeholder="Paste your image URL here (e.g., https://example.com/car.jpg)">
+                    </div>
+                    <div class="form-group">
+                        <label for="sellDescription">Description</label>
+                        <textarea id="sellDescription" rows="4" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sellerName">Your Name</label>
+                            <input type="text" id="sellerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sellerContact">Contact Info</label>
+                            <input type="text" id="sellerContact" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">List Your Car</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p> PIKINE, Tali Icotaf , kognou MALAW</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+221 77 462 33 56</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@MIKE_MOTORS.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MIKE_MOTORS</h3>
+                    <p>Your trusted partner for car rentals and sales.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#cars">Browse Cars</a></li>
+                        <li><a href="#rent">Rent</a></li>
+                        <li><a href="#buy">Buy</a></li>
+                        <li><a href="#sell">Sell</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MIKE_MOTORS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Car Details -->
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
